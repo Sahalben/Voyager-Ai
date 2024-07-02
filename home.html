@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voyager.AI Landing Page</title>
+    <link rel="stylesheet" href="landing.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="background-overlay">
+        <header>
+            <nav>
+                <div class="logo">VOYAGER.AI</div>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">AI assistant</a></li>
+                    <li><a href="#">My trips</a></li>
+                    <li><a href="#">Preferences</a></li>
+                    <li><a href="#">Compare</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+                <div class="right-nav">
+                    <div class="location">
+                        <i data-lucide="map-pin"></i>
+                        <span>Kochi</span>
+                    </div>
+                    <button class="icon-button" aria-label="Settings">
+                        <i data-lucide="settings"></i>
+                    </button>
+                    <button class="icon-button" aria-label="Grid">
+                        <i data-lucide="grid"></i>
+                    </button>
+                </div>
+            </nav>
+        </header>
+
+        
+        <section id="landing">
+        <main class="landing-main">
+            <h1>Welcome To Hassle-Free Travel</h1>
+            <div class="travel-icons">
+                <i data-lucide="car"></i>
+                <i data-lucide="plane"></i>
+                <i data-lucide="hotel"></i>
+            </div>
+            <p class="para">
+                Tired of planning trips? Stressed about finding the best itineraries?
+                Voyager AI has got your back! Now sit back and relax while our intelligent
+                assistant creates the most optimal trip plan for you. Booking and
+                scheduling all within a few taps.
+            </p>
+           <button class="cta-button">Let's Plan</button>
+        </div>
+        </main>
+    </section>
+
+        
+    <section id="planning">
+        <main class="planning-page">
+            <div class="trip-planner">
+                <h2>Let's plan a trip!</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input type="text" id="location" placeholder="Destination">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Describe your trip</label>
+                        <input type="text" id="description" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="text" id="date" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="event">Main event time if there is any</label>
+                        <input type="text" id="event" placeholder="">
+                    </div>
+                    <div class="button-group">
+                        <button type="button" class="btn-secondary">Edit preferences</button>
+                        <button type="submit" class="btn-primary">Create a Plan</button>
+                    </div>
+                </form>
+            </div>
+    
+            <div class="separator">
+                <hr>
+                <span>Or</span>
+                <hr>
+            </div>
+    
+            <div class="ai-assistant">
+                <h2>Let our intelligent assistant help you choose the best for you!</h2>
+                <div class="input-group">
+                    <input type="text" placeholder="Start expressing yourself!">
+                    <button class="icon-button"><i class="icon-info"></i></button>
+                    <button class="icon-button"><i class="icon-camera"></i></button>
+                </div>
+            </div>
+        </main>
+    </section>
+        <script>
+            lucide.createIcons();
+            function createPlan() {
+            const destination = document.getElementById('destination').value;
+            const description = document.getElementById('description').value;
+            const dates = document.getElementById('dates').value;
+            const event = document.getElementById('event').value;
+
+            if (!destination || !description || !dates) {
+                alert('Please fill in all required fields');
+                return;
+            }
+
+            alert(`Planning a trip to ${destination} for ${description} from ${dates}. ${event ? `Main event: ${event}` : ''}`);
+        }
+
+        // Scroll animations
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            const landing = document.querySelector('#landing');
+            const planning = document.querySelector('#planning');
+
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            const landingElements = landing.querySelectorAll('h1, .travel-icons, .para, .cta-button');
+            const planningInterface = planning.querySelector('#planningInterface');
+
+            if (isElementInViewport(landing)) {
+                landingElements.forEach(el => el.classList.add('visible'));
+            }
+
+            if (isElementInViewport(planning)) {
+                planningInterface.classList.add('visible');
+            }
+        });
+
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        // Trigger scroll event on page load
+        window.dispatchEvent(new Event('scroll'));
+        </script>
+        </body>
+</html>
+
+        
