@@ -1,0 +1,346 @@
+/* styles.css */
+
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('rock-staar-XAi6pWVvU_Y-unsplash.jpg');
+    background-size: cover;
+}
+
+
+
+/* Header styles */
+header {
+    padding: 1rem 2rem;
+    gap: 2rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10%;
+    gap: 1rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+/* Navigation links styles */
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 0.5rem;
+    background-color: rgba(25, 55, 109, 0.5);
+    padding: 0.5rem 1rem;
+    border-radius: 1000px;
+}
+
+.nav-links li {
+    font-size: 0.9rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    transition: background-color 0.3s;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+}
+
+.nav-links a:hover {
+    background-color: rgba(37, 82, 163, 0.5);
+}
+
+.right-nav {
+    display: flex;
+    align-items: right;
+    gap: 1rem;
+}
+
+.location, .icon-button {
+    background-color: rgba(25, 55, 109, 0.5);
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.icon-button {
+    cursor: pointer;
+    border: none;
+    color: white;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+section {
+    padding: 60px 20px;
+    min-height: 100vh;
+    transition: opacity 1s;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+#landing {
+background-image: url('rock-staar-XAi6pWVvU_Y-unsplash.jpg') no-repeat
+center center fixed;
+color: #e6e6e6;
+text-align: center;
+}
+#planning {
+    background-image: url('jerry-zhang-BvuZn3FhEdU-unsplash.jpg') no-repeat 
+    center center /cover;
+    color: black;
+    text-align: center;
+
+}
+
+h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.travel-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.para {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #fff;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    background-color: #fff;
+    color: #0056b3;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+
+.cta-button:hover {
+    background-color: #e6e6e6;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* You might want to implement a mobile menu */
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    .para {
+        font-size: 1rem;
+    }
+}
+
+.planning-page {
+    padding-top: 5rem;
+    max-width: 800px;
+    margin: 0 auto;
+    
+}
+
+.trip-planner, .ai-assistant {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+h2 {
+    margin-top: 0;
+    color: #1a3b5d;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #666;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #1a3b5d;
+    color: #ffffff;
+}
+
+.btn-secondary {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    margin: 2rem 0;
+}
+
+.separator hr {
+    flex: 1;
+    border: none;
+    border-top: 1px solid #ffffff;
+}
+
+.separator span {
+    padding: 0 1rem;
+}
+
+.ai-assistant {
+    background-color: rgba(26, 59, 93, 0.9);
+    color: #ffffff;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 25px;
+    padding: 0.5rem;
+}
+
+.input-group input {
+    flex: 1;
+    border: none;
+    padding: 0.5rem;
+    background: transparent;
+}
+
+.input-group .icon-button {
+    background-color: transparent;
+    color: #1a3b5d;
+}
+
+/* Add these classes for the icons */
+.icon-location::before { content: "📍"; }
+.icon-grid::before { content: "▦"; }
+.icon-info::before { content: "ℹ"; }
+.icon-camera::before { content: "📷"; }
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.from-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.from-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.from-left.appear, .from-right.appear {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.scale-in {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scale-in.appear {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Add a smooth scroll behavior to the whole page */
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+/* Add a hover effect to buttons */
+.btn-primary, .btn-secondary, .cta-button {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Add a pulsing animation to the AI assistant input */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(26, 59, 93, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(26, 59, 93, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(26, 59, 93, 0); }
+}
+
+.input-group {
+    animation: pulse 2s infinite;
+}
+
