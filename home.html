@@ -22,13 +22,13 @@
                     <li><a href="#">Support</a></li>
                 </ul>
                 <div class="right-nav">
-                    <div class="location">
+                    <!--<div class="location">
                         <i data-lucide="map-pin"></i>
                         <span>Kochi</span>
                     </div>
-                    <button class="icon-button" aria-label="Settings">
+                   <button class="icon-button" aria-label="Settings">
                         <i data-lucide="settings"></i>
-                    </button>
+                    </button> -->
                     <button class="icon-button" aria-label="Grid">
                         <i data-lucide="grid"></i>
                     </button>
@@ -51,17 +51,17 @@
                 assistant creates the most optimal trip plan for you. Booking and
                 scheduling all within a few taps.
             </p>
-           <button class="cta-button">Let's Plan</button>
+           <button class="cta-button">Join waiting list</button>
         </div>
         </main>
     </section>
 
         
     <section id="planning">
-        <main class="planning-page">
-            <div class="trip-planner">
-                <h2>Let's plan a trip!</h2>
-                <form>
+        
+           
+                <h2 style="margin-top: 5%; margin-bottom: 2%;">Let's plan a trip!</h2>
+                <form class="trip-form">
                     <div class="form-group">
                         <label for="location">Location</label>
                         <input type="text" id="location" placeholder="Destination">
@@ -78,12 +78,13 @@
                         <label for="event">Main event time if there is any</label>
                         <input type="text" id="event" placeholder="">
                     </div>
+                
                     <div class="button-group">
                         <button type="button" class="btn-secondary">Edit preferences</button>
                         <button type="submit" class="btn-primary">Create a Plan</button>
                     </div>
                 </form>
-            </div>
+            
     
             <div class="separator">
                 <hr>
@@ -92,15 +93,89 @@
             </div>
     
             <div class="ai-assistant">
-                <h2>Let our intelligent assistant help you choose the best for you!</h2>
+                <h2 style="margin-bottom: 3%;">Let our intelligent assistant help you choose the best for you!</h2>
                 <div class="input-group">
                     <input type="text" placeholder="Start expressing yourself!">
                     <button class="icon-button"><i class="icon-info"></i></button>
                     <button class="icon-button"><i class="icon-camera"></i></button>
                 </div>
+            
             </div>
-        </main>
+    
     </section>
+    
+
+    <section class="waiting-list">
+        
+        <div class="wl-card">
+        <h2>Join our Waiting List</h2>
+        <p>Be the first to experience Voyager.AI when we launch!</p>
+        <input type="email" id="waitlist-email" placeholder="Enter your email">
+        <button onclick="joinWaitlist()">Join Waiting List</button>
+        <div class="popup" id="popup">
+            <div class="popup-content">
+                <h2>Thank you for subscribing!</h2>
+                <p>You are added to our waiting list.</p>
+                <button class="close-popup" onclick="closePopup()">Close</button>
+            </div>
+        </div>
+    </div>
+    </section>
+    <section id="FAQ">
+        <div class="faq">
+            <h2>Some frquently asked questions</h2>
+        </div>
+        <div class="faq-card">
+            <div class="faq-questions">
+                <div class="label-faq">What is Voyager.AI?</div>
+                <div class="content-faq">
+                    <p>Voyager AI is an ai integrated trip planning service which helps user's plan their trip without spending too much time crafting the perfect trip</p>
+                </div>
+                <div class="label-faq">How does voyager ai work??
+                    <div class="content-faq">
+                        <p>Voyager AI is an ai integrated trip planning service which helps user's plan their trip without spending too much time crafting the perfect trip</p>
+                    </div>
+                </div>
+                <div class="label-faq">How do i get started?
+                    <div class="content-faq">
+                        <p>Voyager AI is an ai integrated trip planning service which helps user's plan their trip without spending too much time crafting the perfect trip</p>
+                    </div>
+                </div>
+                <div class="label-faq">How to optimize preference selections?
+                    <div class="content-faq">
+                        <p>Voyager AI is an ai integrated trip planning service which helps user's plan their trip without spending too much time crafting the perfect trip</p>
+                    </div>
+                </div>
+                <div class="label-faq">How does voyager earn?
+                    <div class="content-faq">
+                        <p>Voyager AI is an ai integrated trip planning service which helps user's plan their trip without spending too much time crafting the perfect trip</p>
+                    </div>
+                </div>
+                <div class="label-faq">Can we use voyager offline?
+                    <div class="content-faq">
+                        <p>Voyager AI is an ai integrated trip planning service which helps user's plan their trip without spending too much time crafting the perfect trip</p>
+                    </div>
+                </div>
+                <div class="label-faq">How safe is my data?
+                    <div class="content-faq">
+                        <p>Voyager AI is an ai integrated trip planning service which helps user's plan their trip without spending too much time crafting the perfect trip</p>
+                    </div>
+                </div>
+                <div class="label-faq">When and where is my data used?
+                    <div class="content-faq">
+                        <p>Voyager AI is an ai integrated trip planning service which helps user's plan their trip without spending too much time crafting the perfect trip</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <a class="contact" href="mailto:voyager.ai.startup@gmail.com">voyager.ai.startup@gmail.com</a>
+        <div class="logo">VOYAGER.AI</div>
+        <p>© 2024 Voyager.AI. All rights reserved.</p>
+    </footer>
+  
         <script>
             lucide.createIcons();
             function createPlan() {
@@ -150,10 +225,46 @@
                 rect.right <= (window.innerWidth || document.documentElement.clientWidth)
             );
         }
+        function joinWaitlist() {
+            const email = document.getElementById('waitlist-email').value;
+            if (email) {
+                alert(`Thank you! ${email} has been added to our waiting list.`);
+                document.getElementById('waitlist-email').value = '';
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        }
+
+        // Add click event listeners to FAQ items
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                alert('More information about this topic will be available soon!');
+            });
+        });
 
         // Trigger scroll event on page load
         window.dispatchEvent(new Event('scroll'));
+
+        document.querySelector('.cta-button').addEventListener('click', () => {
+  const waitingListSection = document.querySelector('.waiting-list');
+  waitingListSection.scrollIntoView({ behavior: 'smooth' });
+});
+
+function joinWaitlist() {
+    const email = document.getElementById('waitlist-email').value;
+    if (email) {
+        document.getElementById('popup').classList.add('show');
+        document.getElementById('waitlist-email').value = '';
+    } else {
+        alert('Please enter a valid email address');
+    }
+}
+
+function closePopup() {
+    document.getElementById('popup').classList.remove('show');
+}
         </script>
+        
         </body>
 </html>
 
